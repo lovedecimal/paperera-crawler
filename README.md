@@ -13,7 +13,7 @@
 
 ## 🚀 快速使用指南
 ### 1. 环境准备
--   **步骤 1**：安装 Python（推荐 3.10～3.12 版本），下载地址：[Python 官方下载页](https://www.python.org/downloads/)
+-   **步骤 1**：安装 Python（推荐 3.14 版本），下载地址：[Python 官方下载页](https://www.python.org/downloads/)
     -   安装时 **必须勾选**「Add Python to PATH」（否则后续命令无法执行）；
     -   验证安装：打开命令提示符/终端，输入 `python --version`，显示版本号即安装成功；
 -   **步骤 2**：打开「命令提示符（Windows）/终端（Mac/Linux）」，输入以下命令安装依赖库：
