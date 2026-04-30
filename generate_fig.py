@@ -25,7 +25,7 @@ def generate_citation_top10_chart():
 
     real_data = {
         "论文标题": [
-            "LLaMA-2: Open Foundation and Fine-Tuned Chat Models",  # 英文标题更贴近真实学术数据
+            "LLaMA-2: Open Foundation and Fine-Tuned Chat Models", 
             "ChatGPT: Optimizing Language Models for Dialogue",
             "大模型预训练数据的质量评估与清洗方法研究",
             "基于大模型的代码生成技术综述",
