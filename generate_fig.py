@@ -5,8 +5,6 @@ import numpy as np
 import os
 
 def generate_citation_top10_chart():
-    """生成计算机大模型论文被引量TOP10可视化图表"""
-    # 1. 全局样式配置（专业美观）
     plt.rcParams.update({
         'font.sans-serif': ['SimHei', 'WenQuanYi Micro Hei', 'Arial Unicode MS'],
         'axes.unicode_minus': False,
@@ -25,7 +23,6 @@ def generate_citation_top10_chart():
         'xtick.major.size': 0
     })
 
-    # 2. 真实化的计算机大模型高被引论文数据（PaperEra实测相近数据）
     real_data = {
         "论文标题": [
             "LLaMA-2: Open Foundation and Fine-Tuned Chat Models",  # 英文标题更贴近真实学术数据
@@ -48,9 +45,8 @@ def generate_citation_top10_chart():
     df = pd.DataFrame(real_data)
     top10_df = df.sort_values(by="被引量", ascending=True)  # 升序排列，TOP1在顶部
 
-    # 3. 绘制渐变柱状图
+   
     fig, ax = plt.subplots()
-    # 渐变蓝色（从浅到深）
     colors = plt.cm.Blues(np.linspace(0.5, 0.9, len(top10_df)))
     bars = ax.barh(
         y=top10_df["论文标题"],
@@ -61,7 +57,7 @@ def generate_citation_top10_chart():
         alpha=0.95
     )
 
-    # 4. 添加数值标签（精准对齐）
+    ）
     for bar in bars:
         width = bar.get_width()
         ax.text(
@@ -74,7 +70,7 @@ def generate_citation_top10_chart():
             fontsize=11
         )
 
-    # 5. 设置标题和标签
+
     ax.set_title(
         "计算机大模型领域论文被引量TOP10（2024）",
         fontsize=18,
@@ -84,10 +80,10 @@ def generate_citation_top10_chart():
     ax.set_xlabel("被引量", fontsize=14, fontweight="medium", labelpad=15)
     ax.set_ylabel("")  # 隐藏Y轴标签
 
-    # 6. 调整X轴范围（留出数值标签空间）
+
     ax.set_xlim(0, max(top10_df["被引量"]) * 1.15)
 
-    # 7. 保存图表（确保目录存在）
+    
     os.makedirs("figs", exist_ok=True)
     save_path = "figs/论文被引量TOP10.png"
     plt.tight_layout(pad=2)
@@ -99,7 +95,7 @@ def generate_citation_top10_chart():
     )
     plt.close()
 
-    print(f"✅ 真实数据版图表已保存至：{os.path.abspath(save_path)}")
+    print(f"真实数据版图表已保存至：{os.path.abspath(save_path)}")
 
 if __name__ == "__main__":
 
